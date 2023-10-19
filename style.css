@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Montserrat:wght@500&family=Roboto:ital,wght@0,500;1,300&family=Titillium+Web:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+
+body {
+    scroll-behavior: smooth;
+    background-color: #f6f5eb;
+}
+
+/* Hamburger Navigation Menu  */
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    border-bottom: 1px solid #E2E8F0;
+    background: linear-gradient(to right, #f6f5eb 69%, #145855 31%);
+    font-family: 'karla';
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    /* Initial border height */
+    background: hotpink;
+    /* Border color */
+    transform: scaleX(0);
+    /* Start with zero width */
+    transform-origin: left;
+    /* Set the transform origin to the left */
+    transition: transform 0.3s;
+}
+
+.nav-link:hover {
+    color: hotpink;
+    /* Text color change on hover */
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+    /* Expand the border to full width */
+}
+
+.nav-logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #220dba;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo img {
+    width: 97px;
+    height: 79px;
+}
+
+
+/* // Inside the Media Query. */
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/*************** End Of Code Navigation Menu *****************/
+
+.image-container {
+    width: 50%;
+    height: 502px;
+    position: relative;
+    /* margin-right: 40px; */
+
+}
+
+
+.image-container img {
+    position: absolute;
+    z-index: 1;
+    height: 404px;
+    width: 291px;
+    top: 2%;
+    transform: rotate(-12deg);
+    left: 0%;
+    box-shadow: -9px 5px 13px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+.container-section {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+}
+
+.special {
+    color: white;
+}
+
+.p-heading {
+    width: 66%;
+    padding: 21px 108px 0px 0px;
+    text-align: left;
+    height: auto;
+}
+
+.main-h {
+    width: 66%;
+    padding: 0px 80px 10px 0px;
+    font-size: 62px;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    font-weight: 900;
+    margin-top: 50px;
+    color: #070742;
+}
+
+#caption-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+}
+
+
+#features {
+    width: 100%;
+    height: 400px;
+    /* background-color: #bdbdbd36; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'karla';
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: row;
+    width: 78%;
+}
+
+.attractive,
+.innovative,
+.educative {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-p1 {
+    padding: 25px;
+    text-align: center;
+}
+
+.attractive img,
+.innovative img,
+.educative img {
+    width: 97px;
+    margin-bottom: 20px;
+}
+
+.feature-heading {
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+@media screen and (max-width:964px) {
+    .p-heading {
+        width: 89%;
+    }
+
+    .main-h {
+        width: 91%;
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 6rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+        z-index: 3;
+    }
+
+    .nav-item>.special {
+        color: #000;
+    }
+
+    .nav-item {
+        margin: 1.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .feature-list {
+        flex-direction: column;
+        width: 65%;
+    }
+
+    #features {
+        height: auto;
+    }
+
+    .feature-heading {
+        margin-left: 0;
+        margin: 22px;
+    }
+
+    .attractive,
+    .innovative,
+    .educative {
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width:815px) {
+    .image-container img {
+        height: 305px;
+        width: 212px;
+        top: 9%;
+    }
+
+    .main-h {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width:585px) {
+    .container-section {
+        flex-direction: column-reverse;
+    }
+
+    #caption-area {
+        width: 100%;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 350px;
+    }
+
+    .image-container img {
+        height: 225px;
+        width: 160px;
+        top: 6%;
+        left: 24%;
+    }
+
+    .main-h {
+        font-size: 36px;
+        padding-right: 25%;
+    }
+
+    .p-heading {
+        padding-right: 65px;
+    }
+}
+
+#booksection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'karla';
+    gap: 25px;
+    margin-top: 33px;
+}
+
+#varietybtn {
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-around; */
+    width: 100%;
+    padding: 10px;
+}
+
+/* Initial button styles with a transparent background */
+/* Initial button styles with a gradient background */
+.variety {
+    background: linear-gradient(166deg, #3498db 50%, #9853d8 50%); /* Gradient background */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-weight:500;
+    font-family: 'karla';
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  /* Hover effect */
+  .variety:hover {
+    background: linear-gradient(90deg, #d32f2f, #ff5722); /* Change gradient on hover */
+    color: #fff; /* Change text color on hover */
+    animation: shake 0.5s; /* Add a subtle shake animation on hover */
+  }
+  
+  /* Click effect */
+  .variety:active {
+    background: linear-gradient(90deg, #ff5722, #d32f2f); /* Change gradient on click */
+    color: #fff; /* Change text color on click */
+  }
+  
+  /* Animation for hover effect */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  
+  
+
+.books-box>img {
+    height: 200px;
+    width: 170px;
+    padding: 6px 18px;
+    background-color: white;
+}
+
+#biography,#fantasy,#History{
+    /* Distributes available space equally among items */
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    gap: 10px;
+    height: auto;
+    justify-content: center;
+    display: none;
+}
+
+
+.books-box {
+
+    padding: 5px;
+    text-align: center;
+    /* width: calc(30% - 10px); */
+    width: 174px;
+    height: auto;
+}
+
+.booksection-h{
+    font-size: 26px;
+    margin-top: 22px;
+    color: palevioletred;
+}
+
+@media screen and (max-width:560px){
+    #biography,#fantasy,#History{
+        width: 100%;
+    }
+    .books-box>img{
+        height: 180px;
+        width: 160px;
+    }
+}
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+    font-family: 'karla';
+
+}
